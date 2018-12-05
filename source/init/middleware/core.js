@@ -3,7 +3,6 @@ import { applyMiddleware, compose } from 'redux';
 
 // Middleware
 import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
 import { customThunk } from './custom';
 
 const logger = createLogger({

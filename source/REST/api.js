@@ -1,5 +1,5 @@
 // Instruments
-import { MAIN_URL, groupId, invite } from './config';
+import { MAIN_URL, groupId } from './config';
 
 export const api = {
     posts: {
@@ -13,14 +13,15 @@ export const api = {
         }
     },
     create: {
-        fetch() {
+        fetch(message) {
             return fetch(`${MAIN_URL}/feed`, {
                 method: 'POST',
                 headers: {
                     'x-no-auth': groupId,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify( { invite } ),
+                body: JSON.stringify({ comment: `${message}` }),
+                
             })
         }
     }
