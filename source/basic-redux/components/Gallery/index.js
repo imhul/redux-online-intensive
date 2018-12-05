@@ -12,7 +12,7 @@ import Styles from './styles.m.css';
 // Actions
 import { showNextPhoto, showPrevPhoto, showSelectedPhoto } from './../../bus/gallery/actions';
 
-// @hot(module)
+@hot(module)
 export default class Gallery extends Component {
     _showNextPhoto = () => {
         store.dispatch(showNextPhoto());
