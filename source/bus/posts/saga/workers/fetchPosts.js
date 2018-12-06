@@ -6,11 +6,11 @@ import { api } from '../../../../REST';
 import { postsActions } from '../../actions';
 import { uiActions } from '../../../ui/actions';
 
-export function* fillPosts({ payload: posts }) {
+export function* fetchPosts({ payload: feed }) {
     try {
         yield put(uiActions.startFetching());
 
-        const response = yield apply(api, api.posts.fetch, [posts]);
+        const response = yield apply(api, api.posts.fetch, [feed]);
         const { data: posts, message } = yield apply(response, response.json);
 
         if( response.status !== 200 ) {
@@ -20,7 +20,7 @@ export function* fillPosts({ payload: posts }) {
         yield put(postsActions.fillPosts(posts));
 
     } catch (error) {
-        console.log("createPost worker: ", error);
+        console.log("fetchPosts worker: ", error);
     } finally {
         yield put(uiActions.stopFetching());
     }

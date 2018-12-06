@@ -1,1 +1,1 @@
-export { createPost } from './createPost';
+export { createPost, fetchPosts } from './createPost';

@@ -17,10 +17,10 @@ export const postsActions = {
             payload: create
         }
     },
-    createPostAsync: (data) => {
+    createPostAsync: (post) => {
         return {
             type: types.CREATE_POST_ASYNC,
-            payload: data
+            payload: post
         };
     },
     fetchPostsAsync: (posts) => {
