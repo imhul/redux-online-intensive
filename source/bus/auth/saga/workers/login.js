@@ -28,5 +28,4 @@ export function* login({ payload: userInfo }) {
     } finally {
         yield put(uiActions.stopFetching());
     }
-
 };
