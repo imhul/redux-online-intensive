@@ -1,6 +1,7 @@
 // Instruments
 import { MAIN_URL, groupId } from './config';
 
+// API
 export const api = {
     auth: {
         signup(userInfo) {
