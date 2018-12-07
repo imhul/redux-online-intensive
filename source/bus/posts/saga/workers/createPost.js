@@ -10,7 +10,7 @@ export function* createPost({ payload: comment }) {
     try {
         yield put(uiActions.startFetching());
 
-        const response = yield apply(api, api.create.fetch, [comment]);
+        const response = yield apply(api, api.posts.create, [comment]);
         const { data: post, message } = yield apply(response, response.json);
 
         if( response.status !== 200 ) {

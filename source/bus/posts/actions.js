@@ -1,9 +1,6 @@
 // Types
 import { types } from './types';
 
-// Instruments
-// import { api } from '../../REST';
-
 export const postsActions = {
     fillPosts: (posts) => {
         return {

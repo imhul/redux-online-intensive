@@ -3,10 +3,9 @@ import { put, apply } from 'redux-saga/effects';
 
 // Instruments
 import { api } from '../../../../REST';
-import { postsActions } from '../../actions';
 import { uiActions } from '../../../ui/actions';
 
-export function* fetchPosts() {
+export function* worker() {
     try {
         yield put(uiActions.startFetching());
 
@@ -17,10 +16,8 @@ export function* fetchPosts() {
             throw new Error(message);
         }
 
-        yield put(postsActions.fillPosts(posts));
-
     } catch (error) {
-        console.log("fetchPosts worker: ", error);
+        console.log("worker error: ", error);
     } finally {
         yield put(uiActions.stopFetching());
     }
