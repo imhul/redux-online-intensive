@@ -8,6 +8,11 @@ export const postsActions = {
             payload: posts
         }
     },
+    clearPosts: () => {
+        return {
+            type: types.CLEAR_POSTS,
+        }
+    },
     createPost: (create) => {
         return {
             type: types.CREATE_POST,
