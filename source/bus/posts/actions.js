@@ -13,15 +13,27 @@ export const postsActions = {
             type: types.CLEAR_POSTS,
         }
     },
-    createPost: (create) => {
+    createPost: (post) => {
         return {
             type: types.CREATE_POST,
-            payload: create
+            payload: post
+        }
+    },
+    removePost: (post) => {
+        return {
+            type: types.REMOVE_POST,
+            payload: post
         }
     },
     createPostAsync: (post) => {
         return {
             type: types.CREATE_POST_ASYNC,
+            payload: post
+        };
+    },
+    removePostAsync: (post) => {
+        return {
+            type: types.REMOVE_POST_ASYNC,
             payload: post
         };
     },
