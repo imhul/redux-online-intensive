@@ -13,7 +13,7 @@ export default class Public extends Component {
         return (
             <Switch>
                 <Route path={book.login} component={Login} />
-                <Route path={book.signup} component={Signup} />
+                <Route path={book.signUp} component={Signup} />
                 <Redirect to={book.login} />
             </Switch>
         );
