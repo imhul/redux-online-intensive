@@ -5,6 +5,7 @@ import { fromJS, List } from 'immutable';
 import { types } from './types';
 
 const initialState = List();
+// TODO: Lesson 8
 
 export const postsReducer = (state = initialState, action) => {
     switch (action.type) {
