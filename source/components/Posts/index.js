@@ -22,10 +22,17 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-       actions: bindActionCreators({ fetchPostsAsync: postsActions.fetchPostsAsync, createPostAsync: postsActions.createPostAsync }, dispatch)
+        actions: bindActionCreators({ 
+           fetchPostsAsync: postsActions.fetchPostsAsync, 
+           createPostAsync: postsActions.createPostAsync, 
+           removePostAsync: postsActions.removePostAsync, 
+           likePostAsync: postsActions.likePostAsync, 
+           unlikePostAsync: postsActions.unlikePostAsync, 
+        }, dispatch)
     }
 };
 
+// Почитать про декораторы @ !!!
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Posts extends Component {
 

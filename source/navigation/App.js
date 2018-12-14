@@ -2,39 +2,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-// Pages
-import { Login, Signup, Feed, Profile, NewPassword } from '../pages';
+// Components
+import Private from './Private';
+import Public from './Public';
+import Loading from '../components/Loading';
 
-// Instruments
-import { book } from './book';
+// Actions
+import { authActions } from '../bus/auth/actions';
 
 const mapStateToProps = (state) => {
     return {
         isAuthenticated: state.auth.get('isAuthenticated'),
+        isInitialized: state.auth.get('isInitialized'),
     }
+};
+
+const mapDispatchToProps = {
+    initializeAsync: authActions.initializeAsync,
 };
 
 @hot(module)
 @withRouter
-@connect(mapStateToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 export default class App extends Component {
+
+    componentDidMount() {
+        this.props.initializeAsync()
+    };
+
     render() {
-        const { isAuthenticated } = this.props;
-        return isAuthenticated ? (
-            <Switch>
-                <Route path={book.feed} component={Feed} />
-                <Route path={book.profile} component={Profile} />
-                <Route path={book.newPassword} component={NewPassword} />
-                <Redirect to={book.feed} />
-            </Switch>
-        ) : (
-            <Switch>
-                <Route path={book.login} component={Login} />
-                <Route path={book.signup} component={Signup} />
-                <Redirect to={book.login} />
-            </Switch>
-        );
-    }
-}
+        const { isAuthenticated, isInitialized } = this.props;
+
+        if(!isInitialized) {
+            return <Loading />;
+        }
+
+        return isAuthenticated ? <Private /> : <Public />
+    };
+};

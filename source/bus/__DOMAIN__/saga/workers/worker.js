@@ -17,7 +17,7 @@ export function* worker() {
         }
 
     } catch (error) {
-        console.log("worker error: ", error);
+        yield put(uiActions.emitError("worker error", error));
     } finally {
         yield put(uiActions.stopFetching());
     }

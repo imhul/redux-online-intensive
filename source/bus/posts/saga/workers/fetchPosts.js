@@ -20,7 +20,7 @@ export function* fetchPosts() {
         yield put(postsActions.fillPosts(posts));
 
     } catch (error) {
-        console.log("fetchPosts worker: ", error);
+        yield put(uiActions.emitError("fetch posts worker error", error));
     } finally {
         yield put(uiActions.stopFetching());
     }
