@@ -19,10 +19,10 @@ export const postsActions = {
             payload: post
         }
     },
-    removePost: (post) => {
+    removePost: (postId) => {
         return {
             type: types.REMOVE_POST,
-            payload: post
+            payload: postId
         }
     },
     createPostAsync: (post) => {
@@ -31,10 +31,10 @@ export const postsActions = {
             payload: post
         };
     },
-    removePostAsync: (post) => {
+    removePostAsync: (postId) => {
         return {
             type: types.REMOVE_POST_ASYNC,
-            payload: post
+            payload: postId
         };
     },
     fetchPostsAsync: (posts) => {
