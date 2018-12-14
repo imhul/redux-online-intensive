@@ -31,7 +31,7 @@ export function* authenticate() {
         yield put(authActions.authenticate());
 
     } catch (error) {
-        yield put(uiActions.emitError(error, "authenticate worker error"));
+        yield put(uiActions.emitError("authenticate worker error", error));
     } finally {
         yield put(uiActions.stopFetching());
         yield put(authActions.initialize());
