@@ -24,8 +24,6 @@ export function* authenticate() {
             throw new Error(message);
         }
 
-        console.log("profile: ", profile);
-
         yield apply(localStorage, localStorage.setItem, ['token', profile.token]);
         yield put(profileActions.fillProfile(profile));
         yield put(authActions.authenticate());

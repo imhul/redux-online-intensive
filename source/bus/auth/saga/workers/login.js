@@ -14,9 +14,6 @@ export function* login({ payload: credentials }) {
         const response = yield apply(api, api.auth.login, [credentials]);
         const { data: profile, message } = yield apply(response, response.json);
 
-        console.log("profile: ", profile);
-        console.log("credentials: ", credentials);
-
         if( response.status !== 200 ) {
             throw new Error(message);
         }
