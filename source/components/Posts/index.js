@@ -30,6 +30,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
+// Почитать про декораторы @ !!!
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Posts extends Component {
 
