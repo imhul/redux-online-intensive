@@ -39,7 +39,7 @@ export const api = {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({token: this.token}),
+                body: JSON.stringify({ token: this.token }),
             });
         },
     },
@@ -78,5 +78,15 @@ export const api = {
                 },
             });
         },
-    }
+    },
+    users: {
+        fetch() {
+            return fetch(`${MAIN_URL}/user/all`, {
+                method: 'GET',
+                headers: {
+                    Authorization: this.token,
+                },
+            });
+        },
+    },
 };
