@@ -16,6 +16,5 @@ export const rootReducer = combineReducers({
     profile,
     users,
     router,
-    
 });
 
