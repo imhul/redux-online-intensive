@@ -25,16 +25,16 @@ export const postsActions = {
             payload: postId
         }
     },
-    likePost: (likedPostData) => {
+    likePost: (postId) => {
         return {
             type: types.LIKE_POST,
-            payload: likedPostData
+            payload: postId
         }
     },
-    unlikePost: (unlikedPostData) => {
+    unlikePost: (postId) => {
         return {
             type: types.UNLIKE_POST,
-            payload: unlikedPostData
+            payload: postId
         }
     },
     createPostAsync: (post) => {

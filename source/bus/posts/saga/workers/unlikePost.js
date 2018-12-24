@@ -19,7 +19,7 @@ export function* unlikePost({ payload: postId }) {
         }
 
         const liker = yield select((state) => {
-            return state.profile.removeAll(['avatar', 'token']);
+            return state.profile.removeAll(['avatar', 'token', 'firstName', 'lastName']);
         });
 
         yield put(postsActions.unlikePost({ liker, postId }));
