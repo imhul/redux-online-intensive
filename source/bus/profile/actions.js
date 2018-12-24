@@ -1,5 +1,6 @@
 // Types
 import {types} from './types';
+import { newPassword } from './../forms/shapes';
 
 export const profileActions = {
     // Sync
@@ -20,6 +21,12 @@ export const profileActions = {
             payload: newAvatarUrl,
         }
     },
+    updatePassword: (newPassword) => {
+        return {
+            type: types.UPDATE_PASSWORD,
+            payload: newPassword,
+        }
+    },
 
     // Async
     updateNameAsync: (newName) => {
@@ -32,6 +39,12 @@ export const profileActions = {
         return {
             type: types.UPDATE_AVATAR_ASYNC,
             payload: newAvatar,
+        }
+    },
+    updatePasswordAsync: (newPass) => {
+        return {
+            type: types.UPDATE_PASSWORD_ASYNC,
+            payload: newPass,
         }
     },
 };

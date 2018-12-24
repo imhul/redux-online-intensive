@@ -22,7 +22,6 @@ export const socketActions = {
         });
 
         socket.on('remove', (event) => {
-            // console.log("JSON.parse(event): ", JSON.parse(event));
             const { data: post } = JSON.parse(event);
             dispatch(postsActions.removePost(post));
         });

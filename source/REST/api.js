@@ -87,7 +87,7 @@ export const api = {
                     Authorization: this.token,
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ profileInfo }),
+                body: JSON.stringify( profileInfo ),
             });
         },
         updateAvatar(avatar) {
