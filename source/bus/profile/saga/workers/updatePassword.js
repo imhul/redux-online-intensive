@@ -9,6 +9,8 @@ import { uiActions } from '../../../ui/actions';
 import { profileActions } from '../../../profile/actions';
 import { book } from "../../../../navigation/book";
 
+// Lesson #10 is sterted
+
 export function* updatePassword({ payload: {
     oldPassword,
     newPassword,
