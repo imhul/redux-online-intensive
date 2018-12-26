@@ -1,9 +1,9 @@
 // Types
-import {types} from './types';
+import { types } from './types';
 
 export const usersActions = {
     // Sync
-    fillUsers: (users) => {
+    fillUsers: ( users ) => {
         return {
             type: types.FILL_USERS,
             payload: users,

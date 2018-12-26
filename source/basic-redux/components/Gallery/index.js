@@ -36,8 +36,6 @@ export default class Gallery extends Component {
         const buttonActiveClass3 = cx({ [Styles.buttonActive]: selectedPhotoIndex === 2 });
         const buttonActiveClass4 = cx({ [Styles.buttonActive]: selectedPhotoIndex === 3 });
 
-        // console.info("::::state::::", state);
-
         return (
             <section className = { Styles.gallery }>
                 <img src = { photo.url } />
