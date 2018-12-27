@@ -4,14 +4,14 @@ import { usersActions } from '../actions';
 // Types
 import { types } from '../types';
 
-discribe('auth actions', () => {
-    test('initialize', () => {
+discribe('users actions', () => {
+    test('fillUsers', () => {
         expect(usersActions.fillUsers()).toEqual({
             type: types.FILL_USERS,
         })
     });
 
-    test('logout', () => {
+    test('clearUsers', () => {
         expect(usersActions.clearUsers()).toEqual({
             type: types.CLEAR_USERS,
         })
