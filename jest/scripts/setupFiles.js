@@ -59,7 +59,6 @@ global.__ = {
     fetchResponseFail400,
     credentials,
     url,
-    users,
 };
 global.fetch = fetch;
 global.localStorage = new LocalStorage();
