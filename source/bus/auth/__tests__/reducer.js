@@ -12,7 +12,7 @@ const initialState = Map({
     isInitialized: false,
 });
 
-discribe('auth reducer', () => {
+describe('auth reducer', () => {
     test('should terurn initial state by default', () => {
         expect(authReducer(void 0, {})).toEqual(initialState)
     });

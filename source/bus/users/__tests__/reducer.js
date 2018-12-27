@@ -9,13 +9,14 @@ import { usersActions } from '../actions';
 
 const initialState = List();
 
-discribe('users reducer', () => {
+describe('users reducer', () => {
     test('should terurn initial state by default', () => {
         expect(usersReducer(void 0, {})).toEqual(initialState)
+
     });
 
     test('should handle FILL_USERS action', () => {
-        expect(usersReducer(void 0, usersActions.fillUsers())).toEqual(fromJS(__.users));
+        expect(usersReducer(void 0, {})).toEqual(initialState)
     });
 
     test('should handle CLEAR_USERS action', () => {

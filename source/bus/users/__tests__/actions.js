@@ -4,7 +4,7 @@ import { usersActions } from '../actions';
 // Types
 import { types } from '../types';
 
-discribe('users actions', () => {
+describe('users actions', () => {
     test('fillUsers', () => {
         expect(usersActions.fillUsers()).toEqual({
             type: types.FILL_USERS,

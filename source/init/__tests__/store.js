@@ -25,7 +25,7 @@ const referenceRootReducer = combineReducers({
 
 const referenceStore = createStore(referenceRootReducer);
 
-discribe('store:', () => {
+describe('store:', () => {
     test('should have valid state shape', () => {
         expect(store.getState()).toEqual(referenceStore.getState())
     });

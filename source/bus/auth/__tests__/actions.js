@@ -4,7 +4,7 @@ import { authActions } from '../actions';
 // Types
 import { types } from '../types';
 
-discribe('auth actions', () => {
+describe('auth actions', () => {
     test('authenticate',() => {
         expect(authActions.authenticate()).toEqual({
             type: types.AUTHENTICATE,
