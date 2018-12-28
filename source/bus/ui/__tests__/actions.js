@@ -1,26 +1,25 @@
 // Actions
-import { profileActions } from '../actions';
-import { newPassword } from './../../forms/shapes';
+import { uiActions } from '../actions';
 
-describe('profile actions', () => {
-    test('fillProfile', () => {
-        expect(profileActions.fillProfile(__.userProfile)).toMatchSnapshot()
+describe('ui actions', () => {
+    test('startFetching', () => {
+        expect(uiActions.startFetching()).toMatchSnapshot()
     });
 
-    test('updateAvatar', () => {
-        expect(profileActions.updateAvatar(__.url)).toMatchSnapshot()
+    test('stopFetching', () => {
+        expect(uiActions.stopFetching()).toMatchSnapshot()
     });
 
-    test('updateNameAsync', () => {
-        expect(profileActions.updateNameAsync(__.newName)).toMatchSnapshot()
+    test('emitError', () => {
+        expect(uiActions.emitError(__.error)).toMatchSnapshot()
     });
 
-    test('updateAvatarAsync', () => {
-        expect(profileActions.updateAvatarAsync(__.newAvatar)).toMatchSnapshot()
+    test('setOnlineState', () => {
+        expect(uiActions.setOnlineState()).toMatchSnapshot()
     });
 
-    test('updatePasswordAsync', () => {
-        expect(profileActions.updatePasswordAsync(__.newPassword)).toMatchSnapshot()
+    test('setOfflineState', () => {
+        expect(uiActions.setOfflineState()).toMatchSnapshot()
     });
 
 });

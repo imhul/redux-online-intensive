@@ -1,51 +1,54 @@
 // Reducer
-import { profileReducer } from "../reducer";
+import { uiReducer } from "../reducer";
 
 // Actions
-import { profileActions } from "../actions";
+import { uiActions } from "../actions";
 
-describe("profile reducer", () => {
+describe("ui reducer", () => {
   test("should terurn initial state by default", () => {
-    expect(profileReducer(void 0, {})).toMatchInlineSnapshot(`
+    expect(uiReducer(void 0, {})).toMatchInlineSnapshot(`
 Immutable.Map {
-  "id": "",
-  "firstName": "",
-  "lastName": "",
-  "avatar": "",
-  "token": "",
+  "isFetching": false,
+  "isOnline": false,
 }
 `);
   });
 
-  test("should handle FILL_PROFILE action", () => {
-    expect(profileReducer(void 0, profileActions.fillProfile(__.userProfile)))
+  test("should handle START_FETCHING action", () => {
+    expect(uiReducer(void 0, uiActions.startFetching())).toMatchInlineSnapshot(`
+Immutable.Map {
+  "isFetching": true,
+  "isOnline": false,
+}
+`);
+  });
+
+  test("should handle STOP_FETCHING action", () => {
+    expect(uiReducer(void 0, uiActions.stopFetching())).toMatchInlineSnapshot(`
+Immutable.Map {
+  "isFetching": false,
+  "isOnline": false,
+}
+`);
+  });
+
+  test("should handle SET_ONLINE_STATE action", () => {
+    expect(uiReducer(void 0, uiActions.setOnlineState()))
       .toMatchInlineSnapshot(`
 Immutable.Map {
-  "id": "TEST_ID",
-  "firstName": "Walter",
-  "lastName": "White",
-  "avatar": "TEST_AVATAR",
-  "token": "TEST_TOKEN",
+  "isFetching": false,
+  "isOnline": true,
 }
 `);
   });
 
-  test("should handle UPDATE_AVATAR action", () => {
-    expect(profileReducer(void 0, profileActions.updateAvatar(__.url)))
+  test("should handle SET_OFFLINE_STATE action", () => {
+    expect(uiReducer(void 0, uiActions.setOfflineState()))
       .toMatchInlineSnapshot(`
 Immutable.Map {
-  "id": "",
-  "firstName": "",
-  "lastName": "",
-  "avatar": "https://www.url.com",
-  "token": "",
+  "isFetching": false,
+  "isOnline": false,
 }
 `);
-  });
-
-  test("should handle CLEAR_PROFILE action", () => {
-    expect(
-      profileReducer(void 0, profileActions.clearProfile())
-    ).toMatchInlineSnapshot(`Immutable.Map {}`);
   });
 });
