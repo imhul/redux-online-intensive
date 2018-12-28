@@ -15,6 +15,8 @@ const userProfile = {
     token,
 };
 
+const users = [{ ...userProfile }, { ...userProfile }, { ...userProfile }];
+
 const credentials = {
     email: 'test@email.com',
     password: '1111',
@@ -59,6 +61,7 @@ global.__ = {
     fetchResponseFail400,
     credentials,
     url,
+    users,
 };
 global.fetch = fetch;
 global.localStorage = new LocalStorage();
