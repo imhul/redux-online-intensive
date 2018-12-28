@@ -20,7 +20,7 @@ export function* fetchUsers() {
         yield put(usersActions.fillUsers(users));
 
     } catch (error) {
-        yield put(uiActions.emitError("fetch users error", error));
+        yield put(uiActions.emitError(error, "fetch users error"));
     } finally {
         yield put(uiActions.stopFetching());
     }
